@@ -18,6 +18,8 @@ public interface IPlayer {
 
     int delayShot();
 
+    String model();
+
     ShotMode shotMode();
 
     ShotType shotType();
@@ -47,6 +49,5 @@ public interface IPlayer {
     void kill();
 
     void shot();
-
 
 }

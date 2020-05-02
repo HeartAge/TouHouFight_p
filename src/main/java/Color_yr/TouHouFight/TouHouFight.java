@@ -18,6 +18,7 @@ public class TouHouFight extends JavaPlugin {
     public static Plugin plugin;
     public static Logger log;
     public static configMain configMain;
+    public static final String channel = "thf:channel";
 
     public static void LoadConfig() {
         if (configMain == null)
@@ -45,7 +46,8 @@ public class TouHouFight extends JavaPlugin {
         log.info("[TouHouFight]事件注册中");
         Bukkit.getPluginManager().registerEvents(new player(), this);
         Bukkit.getPluginManager().registerEvents(new block(), this);
-        Bukkit.getMessenger().registerIncomingPluginChannel(this, "thf:channel", new packer());
+        Bukkit.getMessenger().registerIncomingPluginChannel(this, channel, new packer());
+        Bukkit.getMessenger().registerOutgoingPluginChannel(this, channel);
         TaskManaget.init();
 
         log.info("[TouHouFight]已启动-" + Version);
