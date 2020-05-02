@@ -8,8 +8,7 @@ public class configObj {
         return language;
     }
 
-    public String getVersion()
-    {
+    public String getVersion() {
         return Version;
     }
 }

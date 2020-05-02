@@ -14,11 +14,11 @@ import java.util.logging.Logger;
 
 public class TouHouFight extends JavaPlugin {
 
+    public static final String channel = "thf:channel";
     private static final String Version = "1.0.0";
     public static Plugin plugin;
     public static Logger log;
     public static configMain configMain;
-    public static final String channel = "thf:channel";
 
     public static void LoadConfig() {
         if (configMain == null)
