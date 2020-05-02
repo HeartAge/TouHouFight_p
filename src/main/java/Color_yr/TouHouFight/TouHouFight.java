@@ -3,7 +3,9 @@ package Color_yr.TouHouFight;
 import Color_yr.TouHouFight.Command.THF;
 import Color_yr.TouHouFight.Config.configMain;
 import Color_yr.TouHouFight.Event.block;
+import Color_yr.TouHouFight.Event.packer;
 import Color_yr.TouHouFight.Event.player;
+import Color_yr.TouHouFight.Tasks.TaskManaget;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -24,6 +26,10 @@ public class TouHouFight extends JavaPlugin {
             configMain.setConfig();
     }
 
+    public static void task(Runnable runnable) {
+        Bukkit.getScheduler().runTask(plugin, runnable);
+    }
+
     @Override
     public void onEnable() {
         plugin = this;
@@ -39,12 +45,16 @@ public class TouHouFight extends JavaPlugin {
         log.info("[TouHouFight]事件注册中");
         Bukkit.getPluginManager().registerEvents(new player(), this);
         Bukkit.getPluginManager().registerEvents(new block(), this);
+        Bukkit.getMessenger().registerIncomingPluginChannel(this, "thf:channel", new packer());
+        TaskManaget.init();
+
         log.info("[TouHouFight]已启动-" + Version);
     }
 
     @Override
     public void onDisable() {
         configMain.SaveTask.closeTimer();
+        TaskManaget.stop();
         log.info("[TouHouFight]已停止，感谢使用");
     }
 }
