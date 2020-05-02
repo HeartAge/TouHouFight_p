@@ -1,0 +1,10 @@
+{
+  "Version": "1.0.0",
+  "language": {
+    "unknownCommand": "§d[TouHouFight]§e未知的指令，请用/touhoufigth help获取帮助",
+    "helpCommand": [
+
+    ],
+    "reloadCommand": "§d[TouHouFight]§e重载配置文件"
+  }
+}

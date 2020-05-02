@@ -1,0 +1,13 @@
+name: TouHouFight
+main: Color_yr.TouHouFight.TouHouFight
+author: Color_yr
+version: 1.0.0
+api-version: 1.14
+
+commands:
+  touhoufight:
+    description: 插件主指令
+    usage: §4[TouHouFight]§6/TouHouFight help来查看帮助
+  thf:
+    description: 插件主指令
+    usage: §4[TouHouFight]§6/TouHouFight help来查看帮助
